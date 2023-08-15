@@ -3,6 +3,8 @@ from datetime import datetime
 
 today = datetime.today()
 today_time = today.strftime('%Y/%m/%d')
+today_time2 = today.strftime('%Y%m%d')
+
 
 wb = openpyxl.Workbook()
 ws = wb.active
@@ -47,4 +49,4 @@ for i in seru:
   ws.column_dimensions[i].width = 11
 
 # ファイル保存
-wb.save("課題.xlsx")
+wb.save(f"請求書_{today_time2}.xlsx")
